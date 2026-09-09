@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Aula interactiva sobre arquitectura de computadores, redes de comunicaciones e informática forense.">
+	<meta property="og:title" content="Nexo digital | Arquitectura, redes e informática forense">
+	<meta property="og:description" content="Explora cómo funciona un computador, cómo se comunican las redes y cómo se analiza evidencia digital.">
+	<title>Nexo digital | Arquitectura, redes e informática forense</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+	<script defer src="js/script.js"></script>
+</head>
+<body>
+	<div class="reading-progress" aria-hidden="true"><span></span></div>
+	<header class="site-header">
+		<nav class="nav-wrap" aria-label="Navegación principal">
+			<a class="brand" href="#inicio" aria-label="Nexo digital, inicio"><span class="brand-mark">N</span><span>NEXO<span class="brand-dot">.</span></span></a>
+			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><span></span><span></span><span></span><b class="sr-only">Abrir menú</b></button>
+			<div class="nav-menu" id="main-menu">
+				<a href="#arquitectura">01 Arquitectura</a>
+				<a href="#redes">02 Redes</a>
+				<a href="#forense">03 Forense</a>
+				<a href="#recursos">Recursos</a>
+				<button class="theme-toggle" type="button" aria-label="Cambiar tema" title="Cambiar tema"><span class="theme-icon">◐</span><span class="theme-label">Tema</span></button>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<section class="hero section" id="inicio">
+			<div class="hero-copy reveal">
+				<p class="eyebrow"><span class="eyebrow-line"></span> Aula digital · Nivel fundamental</p>
+				<h1>Arquitectura,<br><em>redes e informática forense.</em></h1>
+				<p class="hero-lede">Un recorrido visual por los componentes que procesan, conectan y dejan huella en nuestros sistemas digitales.</p>
+				<div class="hero-actions"><a class="button button-primary" href="#arquitectura">Explorar módulos <span>↘</span></a><button class="button button-quiet print-trigger" type="button">Exportar a PDF <span>↗</span></button></div>
+				<div class="hero-meta"><span><strong>03</strong> módulos</span><span><strong>12</strong> conceptos</span><span><strong>∞</strong> conexiones</span></div>
+			</div>
+			<div class="hero-visual reveal reveal-delay" aria-label="Diagrama animado de una red digital" role="img">
+				<div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="core"><span>CPU</span><small>DATA / FLOW</small></div>
+				<span class="node node-a">01</span><span class="node node-b">RAM</span><span class="node node-c">IP</span><span class="node node-d">LOG</span>
+				<span class="connection connection-a"></span><span class="connection connection-b"></span><span class="connection connection-c"></span><span class="connection connection-d"></span>
+				<div class="visual-caption"><span class="pulse-dot"></span> sistema en observación <code>0x7A · 24/7</code></div>
+			</div>
+		</section>
+
+		<section class="intro-band"><div class="section narrow"><p class="section-kicker">Mapa de aprendizaje</p><p class="intro-statement">Entender un sistema digital es seguir el viaje de la información: <span>cómo nace en el hardware,</span> cómo cruza una red y cómo puede reconstruirse después.</p></div></section>
+
+		<section class="section module" id="arquitectura">
+			<div class="module-heading reveal"><div><p class="section-kicker">Módulo 01 / Arquitectura</p><h2>Dentro de la máquina</h2></div><p class="module-summary">La arquitectura define las piezas y las reglas que convierten instrucciones en acciones observables.</p></div>
+			<article class="feature-grid reveal">
+				<div class="feature-copy"><span class="number-label">01 — CPU</span><h3>El centro de<br><em>decisión.</em></h3><p>La CPU coordina el trabajo del computador. La Unidad de Control dirige, los registros retienen datos inmediatos y la ALU calcula y compara.</p><div class="mini-fact"><span class="fact-icon">↗</span><span><strong>Idea clave</strong><br>La CPU no “guarda” todo: mueve datos entre niveles según cada instrucción.</span></div></div>
+				<div class="cpu-diagram" aria-label="Diagrama de componentes de la CPU">
+					<div class="cpu-label label-control"><b>UC</b><small>coordina</small></div><div class="cpu-label label-register"><b>REG</b><small>retiene</small></div><div class="cpu-label label-alu"><b>ALU</b><small>calcula</small></div><div class="cpu-chip"><span>CPU</span><small>unidad de proceso</small></div><i class="wire wire-1"></i><i class="wire wire-2"></i><i class="wire wire-3"></i><i class="wire wire-4"></i>
+				</div>
+			</article>
+			<div class="subheading"><p class="section-kicker">El pulso del procesador</p><h3>Ciclo de instrucción</h3></div>
+			<div class="instruction-cycle reveal">
+				<div class="cycle-line"><span class="cycle-beam"></span></div>
+				<button class="cycle-step active" data-step="fetch"><span class="step-index">01</span><strong>Fetch</strong><small>Buscar</small></button><button class="cycle-step" data-step="decode"><span class="step-index">02</span><strong>Decode</strong><small>Interpretar</small></button><button class="cycle-step" data-step="execute"><span class="step-index">03</span><strong>Execute</strong><small>Ejecutar</small></button>
+				<div class="cycle-detail"><span class="detail-tag">FASE ACTIVA</span><h4 id="cycle-title">Fetch / buscar</h4><p id="cycle-text">La Unidad de Control toma la próxima instrucción desde memoria usando el contador de programa.</p><span class="detail-data" id="cycle-data">PC → MAR → IR</span></div>
+			</div>
+			<div class="subheading memory-head"><div><p class="section-kicker">Velocidad vs. capacidad</p><h3>Jerarquía de memoria</h3></div><p>Pasa sobre cada nivel para revelar su papel.</p></div>
+			<div class="memory-stack reveal"><button class="memory-level level-registers" data-memory="registers"><span class="memory-name">Registros</span><span class="memory-value">&lt; 1 ns</span><span class="memory-role">trabajo inmediato</span></button><button class="memory-level level-cache" data-memory="cache"><span class="memory-name">Caché</span><span class="memory-value">1–10 ns</span><span class="memory-role">datos frecuentes</span></button><button class="memory-level level-ram" data-memory="ram"><span class="memory-name">RAM</span><span class="memory-value">50–100 ns</span><span class="memory-role">memoria activa</span></button><button class="memory-level level-storage" data-memory="storage"><span class="memory-name">Almacenamiento</span><span class="memory-value">ms</span><span class="memory-role">archivo persistente</span></button></div>
+			<div class="memory-note" id="memory-note"><strong>Registros</strong><span>Máxima velocidad, mínima capacidad. Viven dentro de la CPU y contienen los operandos que se están usando ahora.</span><b>RÁPIDO / COSTOSO</b></div>
+		</section>
+
+		<section class="section module module-network" id="redes">
+			<div class="module-heading reveal"><div><p class="section-kicker">Módulo 02 / Redes</p><h2>Todo está conectado</h2></div><p class="module-summary">Una red es un acuerdo para que dispositivos diferentes intercambien información de forma ordenada.</p></div>
+			<div class="network-intro reveal"><div class="network-map"><span class="map-line map-line-1"></span><span class="map-line map-line-2"></span><span class="map-line map-line-3"></span><span class="map-node map-server">S</span><span class="map-node map-router">R</span><span class="map-node map-device">D</span><span class="map-node map-device-2">D</span></div><div><span class="number-label">02 — NETWORK</span><h3>Una conversación<br>con reglas.</h3><p>El router decide caminos entre redes. El switch conecta equipos dentro de una misma red. Los dispositivos finales producen y consumen los datos.</p></div></div>
+			<div class="ip-mac reveal"><div class="subheading"><p class="section-kicker">Identidad en dos capas</p><h3>IP y MAC, lado a lado</h3></div><div class="comparison-table" role="table"><div class="table-row table-head" role="row"><span>Propiedad</span><span>Dirección IP</span><span>Dirección MAC</span></div><div class="table-row" role="row"><span>Tipo</span><span><b class="tag tag-blue">Lógica</b> puede cambiar</span><span><b class="tag tag-coral">Física</b> de fábrica</span></div><div class="table-row" role="row"><span>Función</span><span>Ubica el dispositivo entre redes</span><span>Identifica la interfaz local</span></div><div class="table-row" role="row"><span>Ejemplo</span><code>192.168.1.24</code><code>A4:5E:60:1B:9C:02</code></div></div></div>
+			<div class="topology-area reveal"><div class="subheading"><p class="section-kicker">Forma de la conexión</p><h3>Topologías físicas</h3></div><div class="topology-layout"><div class="topology-tabs" role="tablist"><button class="topology-tab active" data-topology="star" role="tab">Estrella <span>01</span></button><button class="topology-tab" data-topology="ring" role="tab">Anillo <span>02</span></button><button class="topology-tab" data-topology="bus" role="tab">Bus <span>03</span></button></div><div class="topology-panel"><div class="topology-visual" id="topology-visual" aria-label="Diagrama de topología estrella"><span class="topo-core">SW</span><span class="topo-device td-1">01</span><span class="topo-device td-2">02</span><span class="topo-device td-3">03</span><span class="topo-device td-4">04</span></div><div class="topology-copy"><span class="detail-tag" id="topology-tag">TOPOLOGÍA 01</span><h4 id="topology-title">Estrella</h4><p id="topology-text">Todos los dispositivos se conectan a un nodo central. Es fácil de administrar y aislar, aunque el switch es un punto crítico.</p><div class="pros-cons"><span><b>+</b><span id="topology-pro">Gestión simple y escalable</span></span><span><b>−</b><span id="topology-con">Depende del nodo central</span></span></div></div></div></div></div>
+		</section>
+
+		<section class="section module module-forense" id="forense">
+			<div class="module-heading reveal"><div><p class="section-kicker">Módulo 03 / Investigación</p><h2>La evidencia deja señales</h2></div><p class="module-summary">La informática forense observa datos volátiles y persistentes para construir una explicación verificable de los hechos.</p></div>
+			<div class="forense-callout reveal"><span class="quote-mark">“</span><p>La mejor evidencia no siempre es la más visible. A veces desaparece al apagar un equipo o queda fragmentada en miles de eventos.</p><span class="quote-source">PRINCIPIO DE VOLATILIDAD / 03</span></div>
+			<div class="evidence-grid reveal"><article class="evidence-card evidence-ram"><span class="card-index">01 / VOLÁTIL</span><h3>Memoria RAM</h3><p>Conservarla primero puede revelar procesos activos, conexiones abiertas, claves temporales y datos que desaparecen al apagar el equipo.</p><div class="evidence-meter"><span style="width: 88%"></span></div><small>prioridad de captura <b>alta</b></small></article><article class="evidence-card evidence-logs"><span class="card-index">02 / CRONOLOGÍA</span><h3>Registros y eventos</h3><p>Los logs del sistema ayudan a establecer líneas temporales, identificar accesos y detectar comportamientos anómalos.</p><div class="event-lines"><i></i><i></i><i></i></div><small>trazabilidad <b>continua</b></small></article><article class="evidence-card evidence-network"><span class="card-index">03 / TRÁFICO</span><h3>Red y conexiones</h3><p>El tráfico permite relacionar dispositivos, destinos y patrones de comunicación para apoyar la reconstrucción de una actividad.</p><div class="signal-bars"><i></i><i></i><i></i><i></i><i></i></div><small>contexto <b>relacional</b></small></article></div>
+			<div class="clarifier"><span class="clarifier-icon">≠</span><div><strong>Dos significados de “registro”</strong><p>Un registro de CPU es una celda ultrarrápida para operar. Un registro o log forense es una huella de eventos del sistema. Comparten nombre, no función.</p></div></div>
+			<div class="evidence-flow reveal"><div class="subheading"><p class="section-kicker">Método de análisis</p><h3>De la señal a la evidencia</h3></div><div class="flow-track"><div><span>01</span><strong>Dispositivo</strong><small>fuente original</small></div><i>→</i><div><span>02</span><strong>Red</strong><small>movimiento</small></div><i>→</i><div><span>03</span><strong>Captura / registro</strong><small>preservación</small></div><i>→</i><div><span>04</span><strong>Análisis</strong><small>correlación</small></div><i>→</i><div class="flow-final"><span>05</span><strong>Evidencia</strong><small>hallazgo defendible</small></div></div></div>
+		</section>
+
+		<section class="resources section" id="recursos"><div class="resources-inner reveal"><div><p class="section-kicker">Para continuar</p><h2>Haz mejores preguntas<br><em>al sistema.</em></h2></div><div class="resource-list"><a href="#arquitectura"><span>01</span><b>Mapa de arquitectura</b><i>↗</i></a><a href="#redes"><span>02</span><b>Lenguaje de redes</b><i>↗</i></a><a href="#forense"><span>03</span><b>Principios forenses</b><i>↗</i></a></div></div></section>
+	</main>
+
+	<footer class="site-footer"><div class="footer-main"><a class="brand" href="#inicio"><span class="brand-mark">N</span><span>NEXO<span class="brand-dot">.</span></span></a><p>Una guía visual para comprender los sistemas que sostienen el mundo digital.</p><div class="footer-links"><a href="#arquitectura">Arquitectura</a><a href="#redes">Redes</a><a href="#forense">Forense</a></div></div><div class="footer-bottom"><span>HTML · CSS · JavaScript vanilla</span><span>Contenido con finalidad educativa · 2026</span></div></footer>
+	<button class="back-top" type="button" aria-label="Volver arriba">↑</button>
+</body>
+</html>
